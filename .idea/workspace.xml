@@ -53,6 +53,7 @@
     "TestNG.RemoveFromCartTest.removeAllItemsToCart.executor": "Run",
     "TestNG.SortTest.sort.executor": "Run",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "C:/Users/milan/IdeaProjects/SwagLabsAutomation/src/main/java/org/example/Main.java"
   }
