@@ -20,16 +20,25 @@ public class AddToCartTest extends BaseTest {
         driver.get("https://www.saucedemo.com/");
     }
 
-
-
     @Test
     public void addAllItemsToCart() {
-        loginPage.enterUsername(validUsername);
-        loginPage.enterPassword(validPassword);
-        loginPage.clickLoginButton();
-        inventoryPage.addAllItemsToCard();
-        expectedNumberOfItemsInCart = ""+inventoryPage.listOfItems.size();
+        login();
+        inventoryPage.addAllProductsToCard();
+        expectedNumberOfItemsInCart = ""+inventoryPage.listOfProducts.size();
         actualNumberOfItemsInCart = inventoryPage.getNumberOfItemsInCart();
         Assert.assertEquals(actualNumberOfItemsInCart, expectedNumberOfItemsInCart);
     }
+    @Test
+    public void addItemsToCartById() {
+        login();
+        inventoryPage.addItemByIdToCard(1);
+        actualNumberOfItemsInCart = inventoryPage.getNumberOfItemsInCart();
+    }
+    @Test
+    public void addItemsToCartByName() {
+        login();
+        inventoryPage.addProductToCartByName("Sauce Labs Bike Light");
+        actualNumberOfItemsInCart = inventoryPage.getNumberOfItemsInCart();
+    }
+
 }

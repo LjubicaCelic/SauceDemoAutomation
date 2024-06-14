@@ -25,10 +25,10 @@ public class RemoveFromCartTest extends BaseTest {
         loginPage.enterUsername(validUsername);
         loginPage.enterPassword(validPassword);
         loginPage.clickLoginButton();
-        inventoryPage.addAllItemsToCard();
+        inventoryPage.addAllProductsToCard();
         inventoryPage.removeAllItemsFromCard();
         expectedNumberOfItemsInCart = "";
         actualNumberOfItemsInCart = inventoryPage.getNumberOfItemsInCart();
-        Assert.assertEquals(actualNumberOfItemsInCart, expectedNumberOfItemsInCart);
+        Assert.assertTrue(actualNumberOfItemsInCart.isEmpty());
     }
 }
