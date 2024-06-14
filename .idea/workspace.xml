@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d3ddc6-4969-4e5e-ae43-4aacbf71e183" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BurgerMenuTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/SortTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/InventoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/InventoryPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AddToCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AddToCartTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RemoveFromCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RemoveFromCartTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="e5d3ddc6-4969-4e5e-ae43-4aacbf71e183" name="Changes" comment="Initial Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,9 +20,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2hsSw0hlWmxBK9PX5HIS14kAzt9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -48,6 +40,7 @@
     "TestNG.AddToCartTest.addItemsToCartByName.executor": "Run",
     "TestNG.BurgerMenuTest.about.executor": "Run",
     "TestNG.BurgerMenuTest.allItems.executor": "Run",
+    "TestNG.BurgerMenuTest.executor": "Run",
     "TestNG.BurgerMenuTest.resetAppState.executor": "Run",
     "TestNG.LoginTest.executor": "Run",
     "TestNG.LoginTest.standardUserCanLogin.executor": "Run",
@@ -64,8 +57,8 @@
     "onboarding.tips.debug.path": "C:/Users/milan/IdeaProjects/SwagLabsAutomation/src/main/java/org/example/Main.java"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.BurgerMenuTest.resetAppState">
-    <configuration name="AddToCartTest.addItemsToCartByName" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.BurgerMenuTest">
+    <configuration name="BurgerMenuTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SwagLabsAutomation" />
       <extension name="coverage">
         <pattern>
@@ -74,9 +67,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.AddToCartTest" />
-      <option name="METHOD_NAME" value="addItemsToCartByName" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="tests.BurgerMenuTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -157,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.BurgerMenuTest" />
         <item itemvalue="TestNG.BurgerMenuTest.resetAppState" />
         <item itemvalue="TestNG.BurgerMenuTest.about" />
         <item itemvalue="TestNG.BurgerMenuTest.allItems" />
         <item itemvalue="TestNG.SortTest.sort" />
-        <item itemvalue="TestNG.AddToCartTest.addItemsToCartByName" />
       </list>
     </recent_temporary>
   </component>
