@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class FooterTest extends BaseTest {
-    String originalWindow;
 
+    String originalWindow;
 
     @BeforeMethod
     public void pageSetUp() {
@@ -51,13 +51,14 @@ public class FooterTest extends BaseTest {
 
     }
 
-    @AfterMethod
-    public void removeAllCookies() {
-        driver.manage().deleteAllCookies();
-    }
-
     private void closeNewWindowAndSwitchBack() {
         driver.close();
         driver.switchTo().window(originalWindow);
+    }
+
+    @AfterMethod
+    public void removeAllCookies() {
+        driver.manage().deleteAllCookies();
+        driver.navigate().refresh();
     }
 }

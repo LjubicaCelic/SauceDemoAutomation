@@ -2,6 +2,7 @@ package tests;
 
 import base.BaseTest;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -70,7 +71,6 @@ public class ProblemUserTest extends BaseTest {
         isValidProduct(testData.tShirtRed);
     }
 
-
     @Test
     public void userCannotBeRedirectedToAboutPage() {
         navigationPage.clickOnBurgerMenu();
@@ -102,5 +102,11 @@ public class ProblemUserTest extends BaseTest {
         Assert.assertNotEquals(productPage.getProductDescription(), productPage.getActualDescription(product));
         Assert.assertNotEquals(productPage.getProductPrice(), productPage.getActualPrice(product));
         productPage.clickToGoBackToProducts();
+    }
+
+    @AfterMethod
+    public void removeAllCookies() {
+        driver.manage().deleteAllCookies();
+        driver.navigate().refresh();
     }
 }

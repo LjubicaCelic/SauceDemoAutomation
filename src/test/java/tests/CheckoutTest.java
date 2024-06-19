@@ -118,5 +118,6 @@ public class CheckoutTest extends BaseTest {
     @AfterMethod
     public void removeAllCookies() {
         driver.manage().deleteAllCookies();
+        driver.navigate().refresh();
     }
 }

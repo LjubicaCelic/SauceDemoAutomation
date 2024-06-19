@@ -50,5 +50,6 @@ public class AddToCartTest extends BaseTest {
     @AfterMethod
     public void removeAllCookies() {
         driver.manage().deleteAllCookies();
+        driver.navigate().refresh();
     }
 }

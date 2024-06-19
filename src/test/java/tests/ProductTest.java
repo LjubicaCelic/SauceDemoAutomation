@@ -2,6 +2,7 @@ package tests;
 
 import base.BaseTest;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -46,10 +47,17 @@ public class ProductTest extends BaseTest {
     public void isValidDescriptionAndPriceForTShirtRed() {
         isValidProduct(testData.tShirtRed);
     }
+
     public void isValidProduct(String product) {
         inventoryPage.navigateToProductPage(product);
         Assert.assertEquals(productPage.getProductName(), product);
         Assert.assertEquals(productPage.getProductDescription(), productPage.getActualDescription(product));
         Assert.assertEquals(productPage.getProductPrice(), productPage.getActualPrice(product));
+    }
+
+    @AfterMethod
+    public void removeAllCookies() {
+        driver.manage().deleteAllCookies();
+        driver.navigate().refresh();
     }
 }

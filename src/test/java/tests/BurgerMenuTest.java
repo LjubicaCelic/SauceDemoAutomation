@@ -2,6 +2,7 @@ package tests;
 
 import base.BaseTest;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -48,6 +49,7 @@ public class BurgerMenuTest extends BaseTest {
         Assert.assertTrue(loginPage.passwordField.isDisplayed());
         Assert.assertTrue(loginPage.loginButton.isDisplayed());
     }
+
     @Test
     public void resetAppStateClearsCartItems() {
         inventoryPage.addAllProductsToCart();
@@ -61,4 +63,9 @@ public class BurgerMenuTest extends BaseTest {
         Assert.assertEquals(testData.actualNumberOfItemsInCart, emptyField);
     }
 
+    @AfterMethod
+    public void removeAllCookies() {
+        driver.manage().deleteAllCookies();
+        driver.navigate().refresh();
+    }
 }
