@@ -9,20 +9,12 @@ import java.time.Duration;
 
 public class LoginTest extends BaseTest {
 
-    String validUsername = "standard_user";
     String invalidUsername = "standard_user123";
     String lockedOutUser = "locked_out_user";
-    String problemUser = "problem_user";
-    String performanceGlitchUser = "performance_glitch_user";
-    String errorUser = "error_user";
-    String visualUser = "visual_user";
-
-    String validPassword = "secret_sauce";
     String invalidPassword = "Secret_sauce";
     String expectedURL = "https://www.saucedemo.com/inventory.html";
-    String actualURL;
-    String actualErrorMessage = "";
-    String invalidUsernameOrPasswordMessage = "Epic sadface: Username and password do not match any user in this service";
+    String actualErrorMessage;
+    String expectedErrorMessage;
 
     @BeforeMethod
     public void pageSetUp() {
@@ -32,41 +24,72 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void standardUserCanLogin() {
-        loginPage.enterUsername(validUsername);
-        loginPage.enterPassword(validPassword);
-        loginPage.clickLoginButton();
-        actualURL = driver.getCurrentUrl();
-        Assert.assertEquals(actualURL, expectedURL);
-        Assert.assertTrue(inventoryPage.cart.isDisplayed());
-        Assert.assertTrue(inventoryPage.burgerMenu.isDisplayed());
-        Assert.assertEquals(inventoryPage.pageTitle.getText(), "Swag Labs");
+    public void userCanLoginWithValidInputs() {
+        login(validUsername, validPassword);
+        actualUrl = driver.getCurrentUrl();
+        Assert.assertEquals(actualUrl, expectedURL);
+        Assert.assertTrue(navigationPage.cart.isDisplayed());
+        Assert.assertTrue(navigationPage.burgerMenu.isDisplayed());
+        Assert.assertEquals(navigationPage.pageTitle.getText(), "Swag Labs");
     }
 
     @Test
     public void userCannotLoginUsingInvalidPassword() {
-        loginPage.enterUsername(validUsername);
-        loginPage.enterPassword(invalidPassword);
-        loginPage.clickLoginButton();
-        actualURL = driver.getCurrentUrl();
+        login(validUsername, invalidPassword);
+        actualUrl = driver.getCurrentUrl();
         actualErrorMessage = loginPage.getErrorText();
-        System.out.println(loginPage.getErrorText());
+        expectedErrorMessage = "Epic sadface: Username and password do not match any user in this service";
         Assert.assertTrue(loginPage.passwordField.isDisplayed());
         Assert.assertTrue(loginPage.loginButton.isDisplayed());
-        Assert.assertEquals(actualErrorMessage, invalidUsernameOrPasswordMessage);
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
     }
 
     @Test
     public void userCannotLoginUsingInvalidUsername() {
-        loginPage.enterUsername(invalidUsername);
-        loginPage.enterPassword(validPassword);
-        loginPage.clickLoginButton();
-        actualURL = driver.getCurrentUrl();
+        login(invalidUsername, validPassword);
+        actualUrl = driver.getCurrentUrl();
         actualErrorMessage = loginPage.getErrorText();
-        System.out.println(loginPage.getErrorText());
+        expectedErrorMessage = "Epic sadface: Username and password do not match any user in this service";
         Assert.assertTrue(loginPage.passwordField.isDisplayed());
         Assert.assertTrue(loginPage.loginButton.isDisplayed());
-        Assert.assertEquals(actualErrorMessage, invalidUsernameOrPasswordMessage);
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
     }
 
+    @Test
+    public void userCannotLoginEmptyFields() {
+        login(emptyField, emptyField);
+        expectedErrorMessage = "Epic sadface: Username is required";
+        actualErrorMessage = loginPage.getErrorText();
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
+        Assert.assertTrue(loginPage.passwordField.isDisplayed());
+        Assert.assertTrue(loginPage.loginButton.isDisplayed());
+    }
+
+    @Test
+    public void userCannotLoginEmptyUsernameField() {
+        login(emptyField, validPassword);
+        expectedErrorMessage = "Epic sadface: Username is required";
+        actualErrorMessage = loginPage.getErrorText();
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
+        Assert.assertTrue(loginPage.passwordField.isDisplayed());
+        Assert.assertTrue(loginPage.loginButton.isDisplayed());
+    }
+
+    @Test
+    public void userCannotLoginEmptyPasswordField() {
+        login(validUsername, emptyField);
+        expectedErrorMessage = "Epic sadface: Password is required";
+        actualErrorMessage = loginPage.getErrorText();
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
+        Assert.assertTrue(loginPage.passwordField.isDisplayed());
+        Assert.assertTrue(loginPage.loginButton.isDisplayed());
+    }
+
+    @Test
+    public void lockedOutUserLoginErrorDisplayed() {
+        login(lockedOutUser, validPassword);
+        actualErrorMessage = loginPage.getErrorText();
+        expectedErrorMessage = "Epic sadface: Sorry, this user has been locked out.";
+        Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
+    }
 }

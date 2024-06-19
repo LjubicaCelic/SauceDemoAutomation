@@ -4,8 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d3ddc6-4969-4e5e-ae43-4aacbf71e183" name="Changes" comment="Initial Commit">
+    <list default="true" id="e5d3ddc6-4969-4e5e-ae43-4aacbf71e183" name="Changes" comment="- Created base classes:&#10;  - BaseTest.java: Contains common setup and teardown methods for tests.&#10;  - TestData.java: Provides test data and utility methods.&#10;&#10;- Implemented Page Object Model (POM) structure:&#10;  - CartPage.java: Page object for the shopping cart page.&#10;  - CheckoutPage.java: Page object for the checkout page.&#10;  - FooterPage.java: Page object for the footer section.&#10;  - InventoryPage.java: Page object for the inventory/product listing page.&#10;  - LoginPage.java: Page object for the login page.&#10;  - NavigationPage.java: Page object for navigation elements.&#10;  - ProductPage.java: Page object for the individual product page.&#10;&#10;- Added test classes:&#10;  - AddToCartTest.java: Tests for adding items to the cart.&#10;  - BurgerMenuTest.java: Tests for interactions with the burger menu.&#10;  - CheckoutTest.java: Tests for the checkout process.&#10;  - FooterTest.java: Tests for footer links and interactions.&#10;  - LoginTest.java: Tests for user login functionality.&#10;  - ProblemUserTest.java: Tests specific to problem user scenarios.&#10;  - ProductTest.java: Tests for product listing and details.&#10;  - RemoveFromCartTest.java: Tests for removing items from the cart.&#10;  - SortTest.java: Tests for sorting products.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/base/TestData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/CheckoutPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/FooterPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/NavigationPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ProductPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CheckoutTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/FooterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/ProblemUserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/ProductTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/InventoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/InventoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AddToCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AddToCartTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BurgerMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BurgerMenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LogoutTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RemoveFromCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RemoveFromCartTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SortTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,25 +56,90 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TestNG.AddToCartTest.addAllItemsToCart.executor": "Run",
+    "TestNG.AddToCartTest.addItemsToCart.executor": "Run",
     "TestNG.AddToCartTest.addItemsToCartById.executor": "Run",
     "TestNG.AddToCartTest.addItemsToCartByName.executor": "Run",
+    "TestNG.AddToCartTest.addItemsToCartByName2.executor": "Run",
+    "TestNG.AddToCartTest.addedProductsAreInCart.executor": "Run",
+    "TestNG.AddToCartTest.executor": "Run",
+    "TestNG.AddToCartTest.userCanAddAllProductsToCart.executor": "Run",
+    "TestNG.AddToCartTest.userCanAddItemsToCartByName.executor": "Run",
+    "TestNG.AddToCartTest.userCanAddProductInCart.executor": "Run",
+    "TestNG.AddToCartTest.userCanAddProductToCartByName.executor": "Run",
+    "TestNG.AddToCartTest.userCanRemoveALlProductsFromCart.executor": "Run",
+    "TestNG.AddToCartTest.userCanRemoveProductFromCart.executor": "Run",
     "TestNG.BurgerMenuTest.about.executor": "Run",
     "TestNG.BurgerMenuTest.allItems.executor": "Run",
     "TestNG.BurgerMenuTest.executor": "Run",
     "TestNG.BurgerMenuTest.resetAppState.executor": "Run",
+    "TestNG.BurgerMenuTest.resetAppStateClearsCartItems.executor": "Run",
+    "TestNG.BurgerMenuTest.test.executor": "Run",
+    "TestNG.BurgerMenuTest.userIsRedirectedToAllProductsPage.executor": "Run",
+    "TestNG.CheckoutTest.afterSubmittingInformationUserIsRedirectedToCheckoutOverview.executor": "Run",
+    "TestNG.CheckoutTest.byFinishingOrderUserIsRedirectedToCheckoutCompletePage.executor": "Run",
+    "TestNG.CheckoutTest.executor": "Run",
+    "TestNG.CheckoutTest.test.executor": "Run",
+    "TestNG.CheckoutTest.userCannotFinishOrderWithEmptyFields.executor": "Run",
+    "TestNG.CheckoutTest.userCannotFinishOrderWithEmptyFirstNameField.executor": "Run",
+    "TestNG.CheckoutTest.userIsOnCheckoutPage.executor": "Run",
+    "TestNG.CheckoutTest.userSuccessfullyOrderedProducts.executor": "Run",
+    "TestNG.FooterTest.executor": "Run",
+    "TestNG.FooterTest.userIsRedirectedToFacebook.executor": "Run",
+    "TestNG.FooterTest.userIsRedirectedToLinkedIn.executor": "Run",
+    "TestNG.FooterTest.userIsRedirectedToTwitter.executor": "Run",
     "TestNG.LoginTest.executor": "Run",
+    "TestNG.LoginTest.lockedOutUserCannotLogin.executor": "Run",
     "TestNG.LoginTest.standardUserCanLogin.executor": "Run",
     "TestNG.LoginTest.userCanLogin.executor": "Run",
+    "TestNG.LoginTest.userCanLoginWithValidInputs.executor": "Run",
+    "TestNG.LoginTest.userCannotLoginEmptyPasswordField.executor": "Run",
+    "TestNG.LoginTest.userCannotLoginEmptyUsernameField.executor": "Run",
     "TestNG.LoginTest.userCannotLoginUsingInvalidPassword.executor": "Run",
     "TestNG.LoginTest.userCannotLoginUsingInvalidUsername.executor": "Run",
+    "TestNG.LogoutTest.executor": "Run",
     "TestNG.LogoutTest.userCanLogout.executor": "Run",
     "TestNG.LogoutTest.userCannotLogout.executor": "Run",
+    "TestNG.ProblemUser.addToCartButtonsAreNotClickable.executor": "Run",
+    "TestNG.ProblemUser.clickingOnSauceLabsBackpackUserIsRedirectedToOtherProduct.executor": "Run",
+    "TestNG.ProblemUser.clickingOnTheUserIsRedirectedToAnotherProduct.executor": "Run",
+    "TestNG.ProblemUser.executor": "Run",
+    "TestNG.ProblemUser.isValidDescriptionAndPriceForSauceLabsBackpack.executor": "Run",
+    "TestNG.ProblemUser.removeAllProductsInventoryPage.executor": "Run",
+    "TestNG.ProblemUser.userCannotAddAllProductsToCart.executor": "Run",
+    "TestNG.ProblemUser.userCannotBeRedirectedToAboutPage.executor": "Run",
+    "TestNG.ProblemUser.userCannotFinishOrderWithEmptyPostalCodeField.executor": "Run",
+    "TestNG.ProblemUser.userCannotSortProducts.executor": "Run",
+    "TestNG.ProblemUser.userCannotSortProductsByNameZToA.executor": "Run",
+    "TestNG.ProblemUsers.addToCartButtonsAreNotClickable.executor": "Run",
+    "TestNG.ProblemUsers.executor": "Run",
+    "TestNG.ProblemUsers.lastNameCharacterCopiedToFirstNameFieldOnCheckoutPageWithFailedOrder.executor": "Run",
+    "TestNG.ProblemUsers.lastNameLastCharacterCopiedToFirstNameField.executor": "Run",
+    "TestNG.ProblemUsers.userCannotEnterToLastNameField.executor": "Run",
+    "TestNG.ProductTest.executor": "Run",
+    "TestNG.ProductTest.isValidDescriptionAndPriceForSauceLabsBikeLight.executor": "Run",
+    "TestNG.ProductTest.isValidDescriptionForSauceLabsBackpack.executor": "Run",
     "TestNG.RemoveFromCartTest.addAllItemsToCart.executor": "Run",
+    "TestNG.RemoveFromCartTest.executor": "Run",
     "TestNG.RemoveFromCartTest.removeAllItemsToCart.executor": "Run",
+    "TestNG.RemoveFromCartTest.removeAllProducts.executor": "Run",
+    "TestNG.RemoveFromCartTest.removeAllProductsInventoryPage.executor": "Run",
+    "TestNG.RemoveFromCartTest.userCanRemoveALlProductsFromCart.executor": "Run",
+    "TestNG.RemoveFromCartTest.userCanRemoveALlProductsFromCartPage.executor": "Run",
+    "TestNG.RemoveFromCartTest.userCanRemoveProductFromCart.executor": "Run",
+    "TestNG.RemoveFromCartTest.userCanRemoveProductFromTheCartByName.executor": "Run",
+    "TestNG.SortTest.executor": "Run",
     "TestNG.SortTest.sort.executor": "Run",
+    "TestNG.SortTest.test.executor": "Run",
+    "TestNG.SortTest.userCanSortProductsByNameZToA.executor": "Run",
+    "TestNG.SortTest.userCanSortProductsByPriceHighToLow.executor": "Run",
+    "TestNG.SortTest.userCanSortProductsByPriceLowToHigh.executor": "Run",
+    "TestNG.base.executor": "Run",
+    "TestNG.tests.AddToCartTest,userCanRemoveProductFromCart and 1 more.executor": "Run",
+    "TestNG.tests.executor": "Run",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -61,9 +147,9 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager" selected="TestNG.BurgerMenuTest">
-    <configuration name="BurgerMenuTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SwagLabsAutomation" />
+  <component name="RunManager" selected="TestNG.tests">
+    <configuration name="BurgerMenuTest.resetAppStateClearsCartItems" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SauceDemoAutomation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -72,15 +158,16 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BurgerMenuTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="METHOD_NAME" value="resetAppStateClearsCartItems" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BurgerMenuTest.about" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SwagLabsAutomation" />
+    <configuration name="BurgerMenuTest.userIsRedirectedToAllProductsPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SauceDemoAutomation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -89,7 +176,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.BurgerMenuTest" />
-      <option name="METHOD_NAME" value="about" />
+      <option name="METHOD_NAME" value="userIsRedirectedToAllProductsPage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -97,8 +184,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BurgerMenuTest.allItems" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SwagLabsAutomation" />
+    <configuration name="RemoveFromCartTest.removeAllProductsInventoryPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SauceDemoAutomation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -106,8 +193,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BurgerMenuTest" />
-      <option name="METHOD_NAME" value="allItems" />
+      <option name="MAIN_CLASS_NAME" value="tests.RemoveFromCartTest" />
+      <option name="METHOD_NAME" value="removeAllProductsInventoryPage" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -115,8 +202,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BurgerMenuTest.resetAppState" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SwagLabsAutomation" />
+    <configuration name="RemoveFromCartTest.userCanRemoveProductFromCart" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SauceDemoAutomation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -124,8 +211,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BurgerMenuTest" />
-      <option name="METHOD_NAME" value="resetAppState" />
+      <option name="MAIN_CLASS_NAME" value="tests.RemoveFromCartTest" />
+      <option name="METHOD_NAME" value="userCanRemoveProductFromCart" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -133,8 +220,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SortTest.sort" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SwagLabsAutomation" />
+    <configuration name="tests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SauceDemoAutomation" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -142,9 +229,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.SortTest" />
-      <option name="METHOD_NAME" value="sort" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
       <properties />
       <listeners />
       <method v="2">
@@ -153,11 +238,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.BurgerMenuTest" />
-        <item itemvalue="TestNG.BurgerMenuTest.resetAppState" />
-        <item itemvalue="TestNG.BurgerMenuTest.about" />
-        <item itemvalue="TestNG.BurgerMenuTest.allItems" />
-        <item itemvalue="TestNG.SortTest.sort" />
+        <item itemvalue="TestNG.tests" />
+        <item itemvalue="TestNG.RemoveFromCartTest.userCanRemoveProductFromCart" />
+        <item itemvalue="TestNG.BurgerMenuTest.resetAppStateClearsCartItems" />
+        <item itemvalue="TestNG.BurgerMenuTest.userIsRedirectedToAllProductsPage" />
+        <item itemvalue="TestNG.RemoveFromCartTest.removeAllProductsInventoryPage" />
       </list>
     </recent_temporary>
   </component>
@@ -193,8 +278,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="- Created base classes:&#10;  - BaseTest.java: Contains common setup and teardown methods for tests.&#10;  - TestData.java: Provides test data and utility methods.&#10;&#10;- Implemented Page Object Model (POM) structure:&#10;  - CartPage.java: Page object for the shopping cart page.&#10;  - CheckoutPage.java: Page object for the checkout page.&#10;  - FooterPage.java: Page object for the footer section.&#10;  - InventoryPage.java: Page object for the inventory/product listing page.&#10;  - LoginPage.java: Page object for the login page.&#10;  - NavigationPage.java: Page object for navigation elements.&#10;  - ProductPage.java: Page object for the individual product page.&#10;&#10;- Added test classes:&#10;  - AddToCartTest.java: Tests for adding items to the cart.&#10;  - BurgerMenuTest.java: Tests for interactions with the burger menu.&#10;  - CheckoutTest.java: Tests for the checkout process.&#10;  - FooterTest.java: Tests for footer links and interactions.&#10;  - LoginTest.java: Tests for user login functionality.&#10;  - ProblemUserTest.java: Tests specific to problem user scenarios.&#10;  - ProductTest.java: Tests for product listing and details.&#10;  - RemoveFromCartTest.java: Tests for removing items from the cart.&#10;  - SortTest.java: Tests for sorting products." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Created base classes:&#10;  - BaseTest.java: Contains common setup and teardown methods for tests.&#10;  - TestData.java: Provides test data and utility methods.&#10;&#10;- Implemented Page Object Model (POM) structure:&#10;  - CartPage.java: Page object for the shopping cart page.&#10;  - CheckoutPage.java: Page object for the checkout page.&#10;  - FooterPage.java: Page object for the footer section.&#10;  - InventoryPage.java: Page object for the inventory/product listing page.&#10;  - LoginPage.java: Page object for the login page.&#10;  - NavigationPage.java: Page object for navigation elements.&#10;  - ProductPage.java: Page object for the individual product page.&#10;&#10;- Added test classes:&#10;  - AddToCartTest.java: Tests for adding items to the cart.&#10;  - BurgerMenuTest.java: Tests for interactions with the burger menu.&#10;  - CheckoutTest.java: Tests for the checkout process.&#10;  - FooterTest.java: Tests for footer links and interactions.&#10;  - LoginTest.java: Tests for user login functionality.&#10;  - ProblemUserTest.java: Tests specific to problem user scenarios.&#10;  - ProductTest.java: Tests for product listing and details.&#10;  - RemoveFromCartTest.java: Tests for removing items from the cart.&#10;  - SortTest.java: Tests for sorting products." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

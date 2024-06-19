@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
-
 public class LoginPage extends BaseTest {
     public LoginPage() {
         PageFactory.initElements(driver, this);
@@ -28,10 +26,12 @@ public class LoginPage extends BaseTest {
     //-------------------------------------------------------
 
     public void enterUsername(String username) {
+        usernameField.clear();
         usernameField.sendKeys(username);
     }
 
     public void enterPassword(String password) {
+        passwordField.clear();
         passwordField.sendKeys(password);
     }
 

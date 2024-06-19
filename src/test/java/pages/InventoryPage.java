@@ -5,7 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class InventoryPage extends BaseTest {
@@ -14,106 +16,139 @@ public class InventoryPage extends BaseTest {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(className = "app_logo")
-    public WebElement pageTitle;
-
-    @FindBy(id = "shopping_cart_container")
-    public WebElement cart;
-
-    @FindBy(id = "react-burger-menu-btn")
-    public WebElement burgerMenu;
-
-    @FindBy(css = "a[class='bm-item menu-item']")
-    public List<WebElement> sidebarElements;
-
-    @FindBy(id = "logout_sidebar_link")
-    public WebElement logoutButton;
-
-    @FindBy(className = "inventory_item_name")
+    @FindBy(css = ".inventory_list .inventory_item")
     public List<WebElement> listOfProducts;
 
     @FindBy(css = "button[class='btn btn_primary btn_small btn_inventory ']")
-    public List<WebElement> addToCartButttons;
+    public List<WebElement> addToCartButtons;
 
     @FindBy(css = "button[class='btn btn_secondary btn_small btn_inventory ']")
     public List<WebElement> removeFromCartButtons;
 
-    @FindBy(className = "shopping_cart_link")
-    public WebElement numberOfItemsInCart;
+    @FindBy(css = "button[class='btn btn_secondary btn_small btn_inventory ']")
+    public WebElement removeFromCartButton;
 
     @FindBy(className = "product_sort_container")
     public WebElement sort;
 
-    @FindBy(className = "inventory_item_name")
-    public WebElement productName;
+    @FindBy(className = "inventory_item_price")
+    public List<WebElement> productPrices;
 
-    //-------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
-    public void addAllProductsToCard() {
-        for (WebElement element : addToCartButttons) {
+    public void addAllProductsToCart() {
+        for (WebElement element : addToCartButtons) {
             element.click();
         }
     }
 
-    public void addItemByIdToCard(int id) {
-        for (int i = 0; i < addToCartButttons.size(); i++) {
-            if (i == id) {
-                addToCartButttons.get(i).click();
-            }
-        }
-    }
-
-    public void removeAllItemsFromCard() {
+    public void removeAllItemsFromCart() {
         for (WebElement element : removeFromCartButtons) {
             element.click();
         }
     }
 
-    public void goToCart() {
-        cart.click();
+    public void clickOnProduct(WebElement product) {
+        product.findElement(By.className("inventory_item_name")).click();
     }
 
-    public void clickOnBurgerMenu() {
-        burgerMenu.click();
+    public void addToCartButton(WebElement product) {
+        product.findElement(By.className("btn_inventory")).click();
     }
 
-    public void clickOnLogoutButton() {
-        logoutButton.click();
-    }
-
-    public void goTo(String element) {
-        for (WebElement webElement : sidebarElements) {
-            if (webElement.getText().equalsIgnoreCase(element)) {
-                webElement.click();
-                break;
-            }
-        }
+    public void removeButton(WebElement product) {
+        product.findElement(By.className("btn_secondary")).click();
     }
 
     public void addProductToCartByName(String itemName) {
         for (WebElement product : listOfProducts) {
-            if (productName.getText().equalsIgnoreCase(itemName)) {
-                WebElement addToCartButton = product.findElement(By.cssSelector("button[class='btn btn_primary btn_small btn_inventory ']"));
-                addToCartButton.click();
+            if (getProductName(product).equalsIgnoreCase(itemName)) {
+                addToCartButton(product);
                 break;
             }
         }
     }
 
-    public void goToProduct(String name) {
+    public void removeProductFromCartByName(String itemName) {
         for (WebElement product : listOfProducts) {
-            if (product.getText().equalsIgnoreCase(name)) {
-                product.click();
+            if (getProductName(product).equalsIgnoreCase(itemName)) {
+                removeButton(product);
                 break;
             }
         }
     }
 
-        public String getNumberOfItemsInCart () {
-            return numberOfItemsInCart.getText();
-        }
-
-        public void clickToSort () {
-            sort.click();
+    public void navigateToProductPage(String name) {
+        for (WebElement product : listOfProducts) {
+            if (getProductName(product).equalsIgnoreCase(name)) {
+                clickOnProduct(product);
+                break;
+            }
         }
     }
+
+    //Methods for sorting products
+
+    public void clickToSort() {
+        sort.click();
+    }
+
+    public void sortBy(String option) {
+        Select select = new Select(sort);
+        select.selectByVisibleText(option);
+    }
+
+    public boolean sortedByPriceLowToHigh() {
+        boolean sorted = true;
+        for (int i = 0; i < productPrices.size() - 1; i++) {
+            if (Double.parseDouble(productPrices.get(i).getText().substring(1)) > (Double.parseDouble(productPrices.get(i + 1).getText().substring(1)))) {
+                sorted = false;
+                break;
+            }
+        }
+        return sorted;
+    }
+
+    public boolean sortedByPriceLHighToLow() {
+        boolean sorted = true;
+        for (int i = 0; i < productPrices.size() - 1; i++) {
+            if (Double.parseDouble(productPrices.get(i).getText().substring(1)) < (Double.parseDouble(productPrices.get(i + 1).getText().substring(1)))) {
+                sorted = false;
+                break;
+            }
+        }
+        return sorted;
+    }
+
+
+    public boolean sortedByNameAtoZ() {
+        List<String> productNames = new ArrayList<>();
+        for (WebElement product : listOfProducts) {
+            productNames.add(product.getText());
+        }
+        boolean sorted = true;
+        for (int i = 0; i < productNames.size() - 1; i++) {
+            if (productNames.get(i).compareToIgnoreCase(productNames.get(i + 1)) > 0) {
+                sorted = false;
+                break;
+            }
+        }
+        return sorted;
+    }
+
+    public boolean sortedByNameZtoA() {
+        List<String> productNames = new ArrayList<>();
+        for (WebElement product : listOfProducts) {
+            productNames.add(product.getText());
+        }
+        boolean sorted = true;
+        for (int i = 0; i < productNames.size() - 1; i++) {
+            if (productNames.get(i).compareToIgnoreCase(productNames.get(i + 1)) < 0) {
+                sorted = false;
+                break;
+            }
+        }
+        return sorted;
+    }
+
+}
