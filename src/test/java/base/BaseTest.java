@@ -127,11 +127,9 @@ public class BaseTest {
         }
         return elementIsDisplayed;
     }
-/*
+
     @AfterClass
     public void tearDown() {
         driver.quit();
     }
-
- */
 }
