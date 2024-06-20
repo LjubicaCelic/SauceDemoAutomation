@@ -47,7 +47,11 @@ public class BaseTest {
         checkoutPage = new CheckoutPage();
         footerPage = new FooterPage();
         productPage = new ProductPage();
+    }
 
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
     }
 
 
@@ -126,10 +130,5 @@ public class BaseTest {
         } catch (Exception ignored) {
         }
         return elementIsDisplayed;
-    }
-
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
     }
 }
