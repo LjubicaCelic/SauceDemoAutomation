@@ -62,13 +62,13 @@ public class ProblemUserTest extends BaseTest {
     }
 
     @Test
-    public void clickingOnTheUserIsRedirectedToAnotherProduct() {
-        isValidProduct(testData.sauceLabsBackpack);
-        isValidProduct(testData.sauceLabsBikeLight);
-        isValidProduct(testData.sauceLabsBoltTShirt);
-        isValidProduct(testData.sauceLabsFleeceJacket);
-        isValidProduct(testData.sauceLabsOnesie);
-        isValidProduct(testData.tShirtRed);
+    public void incorrectProductLink() {
+        isIncorrectProductLink(testData.sauceLabsBackpack);
+        isIncorrectProductLink(testData.sauceLabsBikeLight);
+        isIncorrectProductLink(testData.sauceLabsBoltTShirt);
+        isIncorrectProductLink(testData.sauceLabsFleeceJacket);
+        isIncorrectProductLink(testData.sauceLabsOnesie);
+        isIncorrectProductLink(testData.tShirtRed);
     }
 
     @Test
@@ -96,7 +96,7 @@ public class ProblemUserTest extends BaseTest {
         Assert.assertNotEquals(testData.actualNumberOfItemsInCart, (emptyField));
     }
 
-    public void isValidProduct(String product) {
+    public void isIncorrectProductLink(String product) {
         inventoryPage.navigateToProductPage(product);
         Assert.assertNotEquals(productPage.getProductName(), product);
         Assert.assertNotEquals(productPage.getProductDescription(), productPage.getActualDescription(product));
