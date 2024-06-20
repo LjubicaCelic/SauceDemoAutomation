@@ -62,12 +62,38 @@ public class ProblemUserTest extends BaseTest {
     }
 
     @Test
-    public void incorrectProductLink() {
+    public void incorrectProductLinkForSauceLabsBackpack() {
+        inventoryPage.navigateToProductPage(testData.sauceLabsBackpack);
         isIncorrectProductLink(testData.sauceLabsBackpack);
+    }
+
+    @Test
+    public void incorrectProductLinkForSauceLabBikeLight() {
+        inventoryPage.navigateToProductPage(testData.sauceLabsBikeLight);
         isIncorrectProductLink(testData.sauceLabsBikeLight);
+    }
+
+    @Test
+    public void incorrectProductLinkForSauceLabsBoltTShirt() {
+        inventoryPage.navigateToProductPage(testData.sauceLabsBoltTShirt);
         isIncorrectProductLink(testData.sauceLabsBoltTShirt);
+    }
+
+    @Test
+    public void incorrectProductLinkForSauceLabsFleeceJacket() {
+        inventoryPage.navigateToProductPage(testData.sauceLabsFleeceJacket);
         isIncorrectProductLink(testData.sauceLabsFleeceJacket);
+    }
+
+    @Test
+    public void incorrectProductLinkForSauceLabsOnesie() {
+        inventoryPage.navigateToProductPage(testData.sauceLabsOnesie);
         isIncorrectProductLink(testData.sauceLabsOnesie);
+    }
+
+    @Test
+    public void incorrectProductLinkFortTShirtRed() {
+        inventoryPage.navigateToProductPage(testData.tShirtRed);
         isIncorrectProductLink(testData.tShirtRed);
     }
 
@@ -97,11 +123,9 @@ public class ProblemUserTest extends BaseTest {
     }
 
     public void isIncorrectProductLink(String product) {
-        inventoryPage.navigateToProductPage(product);
         Assert.assertNotEquals(productPage.getProductName(), product);
         Assert.assertNotEquals(productPage.getProductDescription(), productPage.getActualDescription(product));
         Assert.assertNotEquals(productPage.getProductPrice(), productPage.getActualPrice(product));
-        productPage.clickToGoBackToProducts();
     }
 
     @AfterMethod

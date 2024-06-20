@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d3ddc6-4969-4e5e-ae43-4aacbf71e183" name="Changes" comment="- Created base classes:&#10;  - BaseTest.java: Contains common setup and teardown methods for tests.&#10;  - TestData.java: Provides test data and utility methods.&#10;&#10;- Implemented Page Object Model (POM) structure:&#10;  - CartPage.java: Page object for the shopping cart page.&#10;  - CheckoutPage.java: Page object for the checkout page.&#10;  - FooterPage.java: Page object for the footer section.&#10;  - InventoryPage.java: Page object for the inventory/product listing page.&#10;  - LoginPage.java: Page object for the login page.&#10;  - NavigationPage.java: Page object for navigation elements.&#10;  - ProductPage.java: Page object for the individual product page.&#10;&#10;- Added test classes:&#10;  - AddToCartTest.java: Tests for adding items to the cart.&#10;  - BurgerMenuTest.java: Tests for interactions with the burger menu.&#10;  - CheckoutTest.java: Tests for the checkout process.&#10;  - FooterTest.java: Tests for footer links and interactions.&#10;  - LoginTest.java: Tests for user login functionality.&#10;  - ProblemUserTest.java: Tests specific to problem user scenarios.&#10;  - ProductTest.java: Tests for product listing and details.&#10;  - RemoveFromCartTest.java: Tests for removing items from the cart.&#10;  - SortTest.java: Tests for sorting products." />
+    <list default="true" id="e5d3ddc6-4969-4e5e-ae43-4aacbf71e183" name="Changes" comment="- Created base classes:&#10;  - BaseTest.java: Contains common setup and teardown methods for tests.&#10;  - TestData.java: Provides test data and utility methods.&#10;&#10;- Implemented Page Object Model (POM) structure:&#10;  - CartPage.java: Page object for the shopping cart page.&#10;  - CheckoutPage.java: Page object for the checkout page.&#10;  - FooterPage.java: Page object for the footer section.&#10;  - InventoryPage.java: Page object for the inventory/product listing page.&#10;  - LoginPage.java: Page object for the login page.&#10;  - NavigationPage.java: Page object for navigation elements.&#10;  - ProductPage.java: Page object for the individual product page.&#10;&#10;- Added test classes:&#10;  - AddToCartTest.java: Tests for adding items to the cart.&#10;  - BurgerMenuTest.java: Tests for interactions with the burger menu.&#10;  - CheckoutTest.java: Tests for the checkout process.&#10;  - FooterTest.java: Tests for footer links and interactions.&#10;  - LoginTest.java: Tests for user login functionality.&#10;  - ProblemUserTest.java: Tests specific to problem user scenarios.&#10;  - ProductTest.java: Tests for product listing and details.&#10;  - RemoveFromCartTest.java: Tests for removing items from the cart.&#10;  - SortTest.java: Tests for sorting products.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/EndToEndTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ProblemUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ProblemUserTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,6 +112,11 @@
     "TestNG.ProblemUser.userCannotFinishOrderWithEmptyPostalCodeField.executor": "Run",
     "TestNG.ProblemUser.userCannotSortProducts.executor": "Run",
     "TestNG.ProblemUser.userCannotSortProductsByNameZToA.executor": "Run",
+    "TestNG.ProblemUserTest.executor": "Run",
+    "TestNG.ProblemUserTest.incorrectProductLink.executor": "Run",
+    "TestNG.ProblemUserTest.incorrectProductLinkForSauceLabBikeLight.executor": "Run",
+    "TestNG.ProblemUserTest.incorrectProductLinkForSauceLabsBackpack.executor": "Run",
+    "TestNG.ProblemUserTest.incorrectProductLinkSauceLabsBackpack.executor": "Run",
     "TestNG.ProblemUsers.addToCartButtonsAreNotClickable.executor": "Run",
     "TestNG.ProblemUsers.executor": "Run",
     "TestNG.ProblemUsers.lastNameCharacterCopiedToFirstNameFieldOnCheckoutPageWithFailedOrder.executor": "Run",
@@ -141,8 +150,13 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="    String emptyFieldMessage;     String checkoutPageMessage = &quot;Checkout: Your Information&quot;;     String overviewPageMessage = &quot;Checkout: Overview&quot;;     String completePageMessage = &quot;Checkout: Complete!&quot;;     String orderConfirmationMessage = &quot;Thank you for your order!&quot;;     String orderShippingMessage = &quot;Your order has been dispatched, and will arrive just as fast as the pony can get there!&quot;;     String checkoutURL = &quot;https://www.saucedemo.com/checkout-step-one.html&quot;;     String overviewURL = &quot;https://www.saucedemo.com/checkout-step-two.html&quot;;     String checkoutCompleteURL = &quot;https://www.saucedemo.com/checkout-complete.html&quot;;" />
+    </option>
+  </component>
   <component name="RunManager" selected="TestNG.tests">
-    <configuration name="BurgerMenuTest.resetAppStateClearsCartItems" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProblemUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SauceDemoAutomation" />
       <extension name="coverage">
         <pattern>
@@ -151,8 +165,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BurgerMenuTest" />
-      <option name="METHOD_NAME" value="resetAppStateClearsCartItems" />
+      <option name="MAIN_CLASS_NAME" value="tests.ProblemUserTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProblemUserTest.incorrectProductLinkForSauceLabBikeLight" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SauceDemoAutomation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.ProblemUserTest" />
+      <option name="METHOD_NAME" value="incorrectProductLinkForSauceLabBikeLight" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -160,7 +191,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckoutTest.userCanCancelThePurchase" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProblemUserTest.incorrectProductLinkForSauceLabsBackpack" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SauceDemoAutomation" />
       <extension name="coverage">
         <pattern>
@@ -169,8 +200,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CheckoutTest" />
-      <option name="METHOD_NAME" value="userCanCancelThePurchase" />
+      <option name="MAIN_CLASS_NAME" value="tests.ProblemUserTest" />
+      <option name="METHOD_NAME" value="incorrectProductLinkForSauceLabsBackpack" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -178,7 +209,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckoutTest.userCannotFinishOrderWithEmptyFields" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ProblemUserTest.incorrectProductLinkSauceLabsBackpack" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SauceDemoAutomation" />
       <extension name="coverage">
         <pattern>
@@ -187,26 +218,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CheckoutTest" />
-      <option name="METHOD_NAME" value="userCannotFinishOrderWithEmptyFields" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EndToEndTest.endToEndPurchaseFlow" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="SauceDemoAutomation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.EndToEndTest" />
-      <option name="METHOD_NAME" value="endToEndPurchaseFlow" />
+      <option name="MAIN_CLASS_NAME" value="tests.ProblemUserTest" />
+      <option name="METHOD_NAME" value="incorrectProductLinkSauceLabsBackpack" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -233,10 +246,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.tests" />
-        <item itemvalue="TestNG.CheckoutTest.userCanCancelThePurchase" />
-        <item itemvalue="TestNG.CheckoutTest.userCannotFinishOrderWithEmptyFields" />
-        <item itemvalue="TestNG.EndToEndTest.endToEndPurchaseFlow" />
-        <item itemvalue="TestNG.BurgerMenuTest.resetAppStateClearsCartItems" />
+        <item itemvalue="TestNG.ProblemUserTest.incorrectProductLinkForSauceLabsBackpack" />
+        <item itemvalue="TestNG.ProblemUserTest" />
+        <item itemvalue="TestNG.ProblemUserTest.incorrectProductLinkForSauceLabBikeLight" />
+        <item itemvalue="TestNG.ProblemUserTest.incorrectProductLinkSauceLabsBackpack" />
       </list>
     </recent_temporary>
   </component>
