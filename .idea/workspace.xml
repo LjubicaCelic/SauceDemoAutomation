@@ -7,15 +7,9 @@
     <list default="true" id="e5d3ddc6-4969-4e5e-ae43-4aacbf71e183" name="Changes" comment="- Created base classes:&#10;  - BaseTest.java: Contains common setup and teardown methods for tests.&#10;  - TestData.java: Provides test data and utility methods.&#10;&#10;- Implemented Page Object Model (POM) structure:&#10;  - CartPage.java: Page object for the shopping cart page.&#10;  - CheckoutPage.java: Page object for the checkout page.&#10;  - FooterPage.java: Page object for the footer section.&#10;  - InventoryPage.java: Page object for the inventory/product listing page.&#10;  - LoginPage.java: Page object for the login page.&#10;  - NavigationPage.java: Page object for navigation elements.&#10;  - ProductPage.java: Page object for the individual product page.&#10;&#10;- Added test classes:&#10;  - AddToCartTest.java: Tests for adding items to the cart.&#10;  - BurgerMenuTest.java: Tests for interactions with the burger menu.&#10;  - CheckoutTest.java: Tests for the checkout process.&#10;  - FooterTest.java: Tests for footer links and interactions.&#10;  - LoginTest.java: Tests for user login functionality.&#10;  - ProblemUserTest.java: Tests specific to problem user scenarios.&#10;  - ProductTest.java: Tests for product listing and details.&#10;  - RemoveFromCartTest.java: Tests for removing items from the cart.&#10;  - SortTest.java: Tests for sorting products.">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AddToCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/AddToCartTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BurgerMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BurgerMenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/base/TestData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/TestData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/CheckoutTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CheckoutTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/FooterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/FooterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ProblemUserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ProblemUserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ProductTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/RemoveFromCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/RemoveFromCartTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SortTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SortTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,101 +51,103 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;TestNG.&lt;default&gt;.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.addAllItemsToCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.addItemsToCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.addItemsToCartById.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.addItemsToCartByName.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.addItemsToCartByName2.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.addedProductsAreInCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.userCanAddAllProductsToCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.userCanAddItemsToCartByName.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.userCanAddProductInCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.userCanAddProductToCartByName.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.userCanRemoveALlProductsFromCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.AddToCartTest.userCanRemoveProductFromCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.BurgerMenuTest.about.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.BurgerMenuTest.allItems.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.BurgerMenuTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.BurgerMenuTest.resetAppState.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.BurgerMenuTest.resetAppStateClearsCartItems.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.BurgerMenuTest.test.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.BurgerMenuTest.userIsRedirectedToAllProductsPage.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.CheckoutTest.afterSubmittingInformationUserIsRedirectedToCheckoutOverview.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.CheckoutTest.byFinishingOrderUserIsRedirectedToCheckoutCompletePage.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.CheckoutTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.CheckoutTest.test.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.CheckoutTest.userCannotFinishOrderWithEmptyFields.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.CheckoutTest.userCannotFinishOrderWithEmptyFirstNameField.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.CheckoutTest.userIsOnCheckoutPage.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.CheckoutTest.userSuccessfullyOrderedProducts.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.FooterTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.FooterTest.userIsRedirectedToFacebook.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.FooterTest.userIsRedirectedToLinkedIn.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.FooterTest.userIsRedirectedToTwitter.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.lockedOutUserCannotLogin.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.standardUserCanLogin.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.userCanLogin.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.userCanLoginWithValidInputs.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.userCannotLoginEmptyPasswordField.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.userCannotLoginEmptyUsernameField.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.userCannotLoginUsingInvalidPassword.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LoginTest.userCannotLoginUsingInvalidUsername.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LogoutTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LogoutTest.userCanLogout.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.LogoutTest.userCannotLogout.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.addToCartButtonsAreNotClickable.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.clickingOnSauceLabsBackpackUserIsRedirectedToOtherProduct.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.clickingOnTheUserIsRedirectedToAnotherProduct.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.isValidDescriptionAndPriceForSauceLabsBackpack.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.removeAllProductsInventoryPage.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.userCannotAddAllProductsToCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.userCannotBeRedirectedToAboutPage.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.userCannotFinishOrderWithEmptyPostalCodeField.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.userCannotSortProducts.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUser.userCannotSortProductsByNameZToA.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUsers.addToCartButtonsAreNotClickable.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUsers.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUsers.lastNameCharacterCopiedToFirstNameFieldOnCheckoutPageWithFailedOrder.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUsers.lastNameLastCharacterCopiedToFirstNameField.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProblemUsers.userCannotEnterToLastNameField.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductTest.isValidDescriptionAndPriceForSauceLabsBikeLight.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.ProductTest.isValidDescriptionForSauceLabsBackpack.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RemoveFromCartTest.addAllItemsToCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RemoveFromCartTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RemoveFromCartTest.removeAllItemsToCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RemoveFromCartTest.removeAllProducts.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RemoveFromCartTest.removeAllProductsInventoryPage.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RemoveFromCartTest.userCanRemoveALlProductsFromCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RemoveFromCartTest.userCanRemoveALlProductsFromCartPage.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RemoveFromCartTest.userCanRemoveProductFromCart.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.RemoveFromCartTest.userCanRemoveProductFromTheCartByName.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.SortTest.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.SortTest.sort.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.SortTest.test.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.SortTest.userCanSortProductsByNameZToA.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.SortTest.userCanSortProductsByPriceHighToLow.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.SortTest.userCanSortProductsByPriceLowToHigh.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.base.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.tests.AddToCartTest,userCanRemoveProductFromCart and 1 more.executor&quot;: &quot;Run&quot;,
-    &quot;TestNG.tests.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/milan/IdeaProjects/SwagLabsAutomation/src/main/java/org/example/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.<default>.executor": "Run",
+    "TestNG.AddToCartTest.addAllItemsToCart.executor": "Run",
+    "TestNG.AddToCartTest.addItemsToCart.executor": "Run",
+    "TestNG.AddToCartTest.addItemsToCartById.executor": "Run",
+    "TestNG.AddToCartTest.addItemsToCartByName.executor": "Run",
+    "TestNG.AddToCartTest.addItemsToCartByName2.executor": "Run",
+    "TestNG.AddToCartTest.addedProductsAreInCart.executor": "Run",
+    "TestNG.AddToCartTest.executor": "Run",
+    "TestNG.AddToCartTest.userCanAddAllProductsToCart.executor": "Run",
+    "TestNG.AddToCartTest.userCanAddItemsToCartByName.executor": "Run",
+    "TestNG.AddToCartTest.userCanAddProductInCart.executor": "Run",
+    "TestNG.AddToCartTest.userCanAddProductToCartByName.executor": "Run",
+    "TestNG.AddToCartTest.userCanRemoveALlProductsFromCart.executor": "Run",
+    "TestNG.AddToCartTest.userCanRemoveProductFromCart.executor": "Run",
+    "TestNG.BurgerMenuTest.about.executor": "Run",
+    "TestNG.BurgerMenuTest.allItems.executor": "Run",
+    "TestNG.BurgerMenuTest.executor": "Run",
+    "TestNG.BurgerMenuTest.resetAppState.executor": "Run",
+    "TestNG.BurgerMenuTest.resetAppStateClearsCartItems.executor": "Run",
+    "TestNG.BurgerMenuTest.test.executor": "Run",
+    "TestNG.BurgerMenuTest.userIsRedirectedToAllProductsPage.executor": "Run",
+    "TestNG.CheckoutTest.afterSubmittingInformationUserIsRedirectedToCheckoutOverview.executor": "Run",
+    "TestNG.CheckoutTest.byFinishingOrderUserIsRedirectedToCheckoutCompletePage.executor": "Run",
+    "TestNG.CheckoutTest.executor": "Run",
+    "TestNG.CheckoutTest.test.executor": "Run",
+    "TestNG.CheckoutTest.userCanCancelThePurchase.executor": "Run",
+    "TestNG.CheckoutTest.userCannotFinishOrderWithEmptyFields.executor": "Run",
+    "TestNG.CheckoutTest.userCannotFinishOrderWithEmptyFirstNameField.executor": "Run",
+    "TestNG.CheckoutTest.userIsOnCheckoutPage.executor": "Run",
+    "TestNG.CheckoutTest.userSuccessfullyOrderedProducts.executor": "Run",
+    "TestNG.EndToEndTest.endToEndPurchaseFlow.executor": "Run",
+    "TestNG.FooterTest.executor": "Run",
+    "TestNG.FooterTest.userIsRedirectedToFacebook.executor": "Run",
+    "TestNG.FooterTest.userIsRedirectedToLinkedIn.executor": "Run",
+    "TestNG.FooterTest.userIsRedirectedToTwitter.executor": "Run",
+    "TestNG.LoginTest.executor": "Run",
+    "TestNG.LoginTest.lockedOutUserCannotLogin.executor": "Run",
+    "TestNG.LoginTest.standardUserCanLogin.executor": "Run",
+    "TestNG.LoginTest.userCanLogin.executor": "Run",
+    "TestNG.LoginTest.userCanLoginWithValidInputs.executor": "Run",
+    "TestNG.LoginTest.userCannotLoginEmptyPasswordField.executor": "Run",
+    "TestNG.LoginTest.userCannotLoginEmptyUsernameField.executor": "Run",
+    "TestNG.LoginTest.userCannotLoginUsingInvalidPassword.executor": "Run",
+    "TestNG.LoginTest.userCannotLoginUsingInvalidUsername.executor": "Run",
+    "TestNG.LogoutTest.executor": "Run",
+    "TestNG.LogoutTest.userCanLogout.executor": "Run",
+    "TestNG.LogoutTest.userCannotLogout.executor": "Run",
+    "TestNG.ProblemUser.addToCartButtonsAreNotClickable.executor": "Run",
+    "TestNG.ProblemUser.clickingOnSauceLabsBackpackUserIsRedirectedToOtherProduct.executor": "Run",
+    "TestNG.ProblemUser.clickingOnTheUserIsRedirectedToAnotherProduct.executor": "Run",
+    "TestNG.ProblemUser.executor": "Run",
+    "TestNG.ProblemUser.isValidDescriptionAndPriceForSauceLabsBackpack.executor": "Run",
+    "TestNG.ProblemUser.removeAllProductsInventoryPage.executor": "Run",
+    "TestNG.ProblemUser.userCannotAddAllProductsToCart.executor": "Run",
+    "TestNG.ProblemUser.userCannotBeRedirectedToAboutPage.executor": "Run",
+    "TestNG.ProblemUser.userCannotFinishOrderWithEmptyPostalCodeField.executor": "Run",
+    "TestNG.ProblemUser.userCannotSortProducts.executor": "Run",
+    "TestNG.ProblemUser.userCannotSortProductsByNameZToA.executor": "Run",
+    "TestNG.ProblemUsers.addToCartButtonsAreNotClickable.executor": "Run",
+    "TestNG.ProblemUsers.executor": "Run",
+    "TestNG.ProblemUsers.lastNameCharacterCopiedToFirstNameFieldOnCheckoutPageWithFailedOrder.executor": "Run",
+    "TestNG.ProblemUsers.lastNameLastCharacterCopiedToFirstNameField.executor": "Run",
+    "TestNG.ProblemUsers.userCannotEnterToLastNameField.executor": "Run",
+    "TestNG.ProductTest.executor": "Run",
+    "TestNG.ProductTest.isValidDescriptionAndPriceForSauceLabsBikeLight.executor": "Run",
+    "TestNG.ProductTest.isValidDescriptionForSauceLabsBackpack.executor": "Run",
+    "TestNG.RemoveFromCartTest.addAllItemsToCart.executor": "Run",
+    "TestNG.RemoveFromCartTest.executor": "Run",
+    "TestNG.RemoveFromCartTest.removeAllItemsToCart.executor": "Run",
+    "TestNG.RemoveFromCartTest.removeAllProducts.executor": "Run",
+    "TestNG.RemoveFromCartTest.removeAllProductsInventoryPage.executor": "Run",
+    "TestNG.RemoveFromCartTest.userCanRemoveALlProductsFromCart.executor": "Run",
+    "TestNG.RemoveFromCartTest.userCanRemoveALlProductsFromCartPage.executor": "Run",
+    "TestNG.RemoveFromCartTest.userCanRemoveProductFromCart.executor": "Run",
+    "TestNG.RemoveFromCartTest.userCanRemoveProductFromTheCartByName.executor": "Run",
+    "TestNG.SortTest.executor": "Run",
+    "TestNG.SortTest.sort.executor": "Run",
+    "TestNG.SortTest.test.executor": "Run",
+    "TestNG.SortTest.userCanSortProductsByNameZToA.executor": "Run",
+    "TestNG.SortTest.userCanSortProductsByPriceHighToLow.executor": "Run",
+    "TestNG.SortTest.userCanSortProductsByPriceLowToHigh.executor": "Run",
+    "TestNG.base.executor": "Run",
+    "TestNG.tests.AddToCartTest,userCanRemoveProductFromCart and 1 more.executor": "Run",
+    "TestNG.tests.executor": "Run",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/milan/IdeaProjects/SwagLabsAutomation/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.tests">
+}]]></component>
+  <component name="RunManager" selected="TestNG.CheckoutTest.userCanCancelThePurchase">
     <configuration name="BurgerMenuTest.resetAppStateClearsCartItems" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SauceDemoAutomation" />
       <extension name="coverage">
@@ -170,7 +166,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BurgerMenuTest.userIsRedirectedToAllProductsPage" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckoutTest.userCanCancelThePurchase" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SauceDemoAutomation" />
       <extension name="coverage">
         <pattern>
@@ -179,8 +175,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.BurgerMenuTest" />
-      <option name="METHOD_NAME" value="userIsRedirectedToAllProductsPage" />
+      <option name="MAIN_CLASS_NAME" value="tests.CheckoutTest" />
+      <option name="METHOD_NAME" value="userCanCancelThePurchase" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -188,7 +184,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RemoveFromCartTest.userCanRemoveProductFromCart" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckoutTest.userCannotFinishOrderWithEmptyFields" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SauceDemoAutomation" />
       <extension name="coverage">
         <pattern>
@@ -197,8 +193,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.RemoveFromCartTest" />
-      <option name="METHOD_NAME" value="userCanRemoveProductFromCart" />
+      <option name="MAIN_CLASS_NAME" value="tests.CheckoutTest" />
+      <option name="METHOD_NAME" value="userCannotFinishOrderWithEmptyFields" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -206,10 +202,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="EndToEndTest.endToEndPurchaseFlow" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SauceDemoAutomation" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.EndToEndTest" />
+      <option name="METHOD_NAME" value="endToEndPurchaseFlow" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -234,11 +238,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CheckoutTest.userCanCancelThePurchase" />
+        <item itemvalue="TestNG.CheckoutTest.userCannotFinishOrderWithEmptyFields" />
         <item itemvalue="TestNG.tests" />
+        <item itemvalue="TestNG.EndToEndTest.endToEndPurchaseFlow" />
         <item itemvalue="TestNG.BurgerMenuTest.resetAppStateClearsCartItems" />
-        <item itemvalue="TestNG.&lt;default&gt;" />
-        <item itemvalue="TestNG.RemoveFromCartTest.userCanRemoveProductFromCart" />
-        <item itemvalue="TestNG.BurgerMenuTest.userIsRedirectedToAllProductsPage" />
       </list>
     </recent_temporary>
   </component>

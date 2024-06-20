@@ -31,6 +31,7 @@ public class BaseTest {
     public String emptyField = "";
     public String validUsername = "standard_user";
     public String validPassword = "secret_sauce";
+    public String loginPageUrl = "https://www.saucedemo.com/";
     public String inventoryURL = "https://www.saucedemo.com/inventory.html";
     public String actualUrl;
 
@@ -126,9 +127,11 @@ public class BaseTest {
         }
         return elementIsDisplayed;
     }
-
+/*
     @AfterClass
     public void tearDown() {
         driver.quit();
     }
+
+ */
 }
